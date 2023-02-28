@@ -1,5 +1,7 @@
 package com.tryCloud.utilities;
 
+import org.openqa.selenium.By;
+
 import java.io.FileInputStream;
 import java.io.IOException;
 import java.util.Properties;
@@ -11,7 +13,7 @@ public class ConfigurationReader {
     //"static" is to make sure its created and loaded before everything else.
     private static Properties properties = new Properties();
 
-    static{
+    static {
 
         try {
             //2- Open file using FileInputStream (open file)
@@ -31,8 +33,7 @@ public class ConfigurationReader {
     //create a utility method to use the object to read
     //4- Use "properties" object to read from the file (read properties)
 
-    public static String getProperty(String keyword){
+    public static String getProperty(String keyword) {
         return properties.getProperty(keyword);
     }
-
 }
