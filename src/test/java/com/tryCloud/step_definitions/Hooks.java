@@ -1,6 +1,7 @@
 package com.tryCloud.step_definitions;
 
 
+import com.tryCloud.pages.LoginPage;
 import com.tryCloud.utilities.BrowserUtils;
 import com.tryCloud.utilities.ConfigurationReader;
 import com.tryCloud.utilities.Driver;
@@ -25,6 +26,10 @@ public class Hooks {
         Driver.getDriver().manage().timeouts().implicitlyWait(Duration.ofSeconds(20));
 
         Driver.getDriver().get(ConfigurationReader.getProperty("url"));
+
+        LoginPage loginPage = new LoginPage();
+
+        loginPage.login1();
     }
 
     //@Before (value = "@login", order = 2 )
